@@ -1,0 +1,14 @@
+
+<h3>All Transactions:</h3>
+<br>
+<ul>
+    <table style="width:100%">
+        <tr><th> Details </th><th> Amount </th><th> Category </th>
+        </tr>
+        {% for txn in my_txn%}
+               <tr><th>{{ txn.details }}</th><th>{{txn.amount}}</th><th>{{txn.category}}</th>
+               </tr>
+
+        {% endfor %}
+    </table>
+</ul>
