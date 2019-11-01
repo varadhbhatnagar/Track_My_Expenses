@@ -4,5 +4,5 @@ from . import views
 
 urlpatterns = [
     path('transactions/<int:user_id>/', views.detail, name='detail'),
-    path('group/<int:group_id>/',views.group, name ='group')
+    path('optimize/<int:group_id>/',views.group, name ='group')
 ]
