@@ -4,7 +4,6 @@ from . import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('mytransactions/', include('txn.urls')),
-    path('', views.index, name='index')
-
+    path('', include('txn.urls')),
+    path('', views.index, name='index'),
 ]
