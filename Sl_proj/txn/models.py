@@ -8,7 +8,7 @@ class Transaction(models.Model):
     amount = models.FloatField()
     category = models.CharField(max_length=50)
     user = models.ForeignKey(User, on_delete=models.PROTECT)
-    #bill = models.FilePathField(null=True)
+    bill = models.FileField(null=True)
     timestamp = models.DateTimeField(auto_now=True)
 
     def get_absolute_url(self):

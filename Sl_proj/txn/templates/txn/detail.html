@@ -20,6 +20,14 @@
         <li>
             Category : {{ txn_detail.category }}
         </li>
+        <li>
+            Receipt :
+            {% if txn_detail.bill %}
+            <img alt="Receipt Picture" src="{{ txn_detail.bill.url }}" class="img-responsive">
+            {% else %}
+            Not Uploaded
+            {% endif %}
+        </li>
     </ul>
 
     <a href="{% url 'transaction-update' txn_detail.pk %}">

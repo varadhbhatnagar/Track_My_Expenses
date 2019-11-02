@@ -8,5 +8,6 @@ urlpatterns = [
     url(r'^detail/(?P<pk>[0-9]+)$', views.detail, name='detail'),
     url(r'^transaction/add/$', views.TransactionCreate.as_view(), name='transaction-add'),
     url(r'^transaction/update/(?P<pk>[0-9]+)/$', views.TransactionUpdate.as_view(), name='transaction-update'),
-    url(r'^transaction/delete/(?P<pk>[0-9]+)/$', views.TransactionDelete.as_view(), name='transaction-delete')
+    url(r'^transaction/delete/(?P<pk>[0-9]+)/$', views.TransactionDelete.as_view(), name='transaction-delete'),
+    url(r'^register/$', views.UserFormView.as_view(), name='register')
 ]
