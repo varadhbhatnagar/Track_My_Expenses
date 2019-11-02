@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
+from django.urls import reverse
 
 
 class Transaction(models.Model):
@@ -9,6 +10,9 @@ class Transaction(models.Model):
     user = models.ForeignKey(User, on_delete=models.PROTECT)
     #bill = models.FilePathField(null=True)
     timestamp = models.DateTimeField(auto_now=True)
+
+    def get_absolute_url(self):
+        return reverse('detail', kwargs={'pk': self.pk})
 
     def __str__(self):
         return self.details + '-' + str(self.amount)
