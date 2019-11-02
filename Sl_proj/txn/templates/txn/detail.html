@@ -2,15 +2,24 @@
 {% block title %}Dashboard{% endblock %}
 {% block content %}
 <div style="text-align: center">
-    <h3>My Transactions</h3>
+    <h3>Details : Transaction ID = {{ txn_detail.pk }}</h3>
     <br>
-    <table style="width:80%; margin-left: 20%; margin-right:auto;">
-        <tr><th>Details</th><th> Amount </th><th> Category </th>
-        </tr>
-        {% for txn in my_txn%}
-               <tr><th>{{ txn.details }}</th><th>{{txn.amount}}</th><th>{{txn.category}}</th>
-               </tr>
-        {% endfor %}
-    </table>
+    <ul>
+        <li>
+            Time of transaction : {{ txn_detail.timestamp }}
+        </li>
+        <li>
+            User ID : {{ txn_detail.user}}
+        </li>
+        <li>
+            Details : {{ txn_detail.details }}
+        </li>
+        <li>
+            Amount : {{ txn_detail.amount }}
+        </li>
+        <li>
+            Category : {{ txn_detail.category }}
+        </li>
+    </ul>
 </div>
 {% endblock %}

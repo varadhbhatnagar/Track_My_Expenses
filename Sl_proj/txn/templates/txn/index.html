@@ -1,0 +1,16 @@
+{% extends "Sl_proj/base.html" %}
+{% block title %}Dashboard{% endblock %}
+{% block content %}
+<div style="text-align: center">
+    <h3>My Transactions</h3>
+    <br>
+    <table style="width:80%; margin-left: 16%; margin-right:auto;">
+        <tr><th> Timestamp </th><th> Details </th><th> Amount </th><th> Category </th>
+        </tr>
+        {% for txn in my_txn%}
+            <tr>><th><a href="{% url 'detail' txn.pk %}">{{ txn.timestamp }}</a></th><th>{{ txn.details }}</th><th>{{txn.amount}}</th><th>{{txn.category}}</th>
+               </tr>
+        {% endfor %}
+    </table>
+</div>
+{% endblock %}
