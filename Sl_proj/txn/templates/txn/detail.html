@@ -21,5 +21,19 @@
             Category : {{ txn_detail.category }}
         </li>
     </ul>
+
+    <a href="{% url 'transaction-update' txn_detail.pk %}">
+    <span class="glyphicon glyphicon-edit" aria-hidden="true"></span>&nbsp;
+                    Edit Transaction
+    </a>
+
+    <form action="{% url 'transaction-delete' txn_detail.pk %}" method="post">
+        {% csrf_token %}
+        <input type="hidden" name="user_id" value="{{ txn_detail.user_id }}"/>
+               <button type="submit" class="btn btn-danger btn-small">
+                   <span class="glyphicon glyphicon-trash"></span>
+                </button>
+    </form>
+
 </div>
 {% endblock %}

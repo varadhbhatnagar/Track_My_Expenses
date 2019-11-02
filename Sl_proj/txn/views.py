@@ -3,6 +3,7 @@ from .models import Transaction
 from django.shortcuts import render, get_object_or_404
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.views import generic
+from django.urls import reverse_lazy, reverse
 
 
 def index(request, user_id):
@@ -30,6 +31,16 @@ class TransactionCreate(CreateView):
         form.instance.user = self.request.
         return super(TransactionCreate, self).form_valid(form)
     '''
+
+
+class TransactionUpdate(UpdateView):
+    model = Transaction
+    fields = ['details', 'amount', 'category', 'user']
+
+
+class TransactionDelete(DeleteView):
+    model = Transaction
+    success_url = reverse_lazy('index')
 
 # Generic View Implementation. May be useful later.
 '''

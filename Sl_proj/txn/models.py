@@ -12,7 +12,7 @@ class Transaction(models.Model):
     timestamp = models.DateTimeField(auto_now=True)
 
     def get_absolute_url(self):
-        return reverse('detail', kwargs={'pk': self.pk})
+        return reverse('index', kwargs={'user_id': self.user_id})
 
     def __str__(self):
         return self.details + '-' + str(self.amount)
