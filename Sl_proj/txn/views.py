@@ -8,6 +8,7 @@ from django.urls import reverse_lazy, reverse
 from django.views.generic import View
 from .forms import UserForm
 from .optimize_transaction import optimize_transaction
+from django.db.models import Sum
 
 
 def index(request, user_id):
@@ -75,11 +76,40 @@ class UserFormView(View):
             if user is not None:
                 if user.is_active:
                     login(request, user)
+                    return HttpResponse("success")
+
+        return render(request, self.template_name, {'form': form})
+'''
+class UserLoginFormView(View):
+    form_class = UserForm
+    template_name = 'txn/login_form.html'
+
+    # displays a blank form
+    def get(self, request):
+        form = self.form_class(None)
+        return render(request, self.template_name, {'form': form})
+
+    # process form data
+    def post(self, request):
+        form = self.form_class(request.POST)
+        # print("############################")
+        if True:
+            user = form.save(commit=False)
+            print("############################")
+            # cleaned data
+            username = form['username']
+            password = form['password']
+
+            # returns User objects if credentials are correct
+            user = authenticate(username=username, password=password)
+
+            if user is not None:
+                if user.is_active:
+                    login(request, user)
                     return redirect('index/', args=user.pk)
 
         return render(request, self.template_name, {'form': form})
-
-
+'''
 def optimize(request, group_id):
     Transaction_list = GroupTransaction.objects.filter(gname=group_id)
     if len(Transaction_list) == 0:
@@ -98,9 +128,19 @@ def optimize(request, group_id):
     return HttpResponse(GroupTransaction.objects.filter(gname=group_id))
 
 
-# def analysis(request, user_id):
-#     my_txn = Transaction.objects.filter(user=user_id)
-#     temp=[]
+def analysis(request, user_id):
+    data=Transaction.objects.filter(user=user_id).values('category').annotate(Sum('amount'))
+    # context = dict(zip(data[:, 0], data[:, 1]))
+    # return render(request, 'txn/test.html', context)
+    dict1={}
+    value = []
+    label = []
+    for i in data:
+        value.append(i['amount__sum'])
+        label.append(i['category'])
+    dict1 = {'value' : value, 'label' : label}
+    print(dict1)
+    return render(request, 'txn/test.html', dict1)
     
 
     # Generic View Implementation. May be useful later.
