@@ -17,6 +17,7 @@ class Transaction(models.Model):
     def __str__(self):
         return self.details + '-' + str(self.amount)
 
+
 class Group(models.Model):
     gname = models.CharField(max_length=40)
     participants = models.ManyToManyField(User)
@@ -29,4 +30,4 @@ class GroupTransaction(models.Model):
     gname = models.ForeignKey(Group, on_delete=models.PROTECT)
 
     def __str__(self):
-        return str(self.owe) + '-' + str(self.amount) + '-' + str(self.ewo )+'-'+ str(self.gname.gname)
+        return str(self.owe) + '-' + str(self.amount) + '-' + str(self.ewo)+'-' + str(self.gname.gname)
