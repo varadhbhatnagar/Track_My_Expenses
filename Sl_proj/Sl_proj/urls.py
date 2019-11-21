@@ -8,9 +8,10 @@ from django.conf.urls.static import static
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('mytransactions/', include('txn.urls')),
+    path('register/', views.UserFormView.as_view(), name='register'),
+    path('login/', views.UserLoginFormView.as_view(), name='login'),
     path('', views.home, name='home'),
-    path('', include('txn.urls'))
-
+    #path('', include('txn.urls'))
 ]
 
 if settings.DEBUG:

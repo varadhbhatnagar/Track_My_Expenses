@@ -1,12 +1,8 @@
 from django.http import Http404, HttpResponse
 from .models import *
-from django.shortcuts import render, get_object_or_404, redirect
-from django.contrib.auth import authenticate, login
+from django.shortcuts import render, get_object_or_404
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
-from django.views import generic
 from django.urls import reverse_lazy, reverse
-from django.views.generic import View
-from .forms import UserForm
 from .optimize_transaction import optimize_transaction
 from django.db.models import Sum
 
@@ -48,68 +44,6 @@ class TransactionDelete(DeleteView):
     success_url = reverse_lazy('index')
 
 
-class UserFormView(View):
-    form_class = UserForm
-    template_name = 'txn/registration_form.html'
-
-    # displays a blank form
-    def get(self, request):
-        form = self.form_class(None)
-        return render(request, self.template_name, {'form': form})
-
-    # process form data
-    def post(self, request):
-        form = self.form_class(request.POST)
-
-        if form.is_valid():
-            user = form.save(commit=False)
-
-            # cleaned data
-            username = form.cleaned_data['username']
-            password = form.cleaned_data['password']
-            user.set_password(password)
-            user.save()
-
-            # returns User objects if credentials are correct
-            user = authenticate(username=username, password=password)
-
-            if user is not None:
-                if user.is_active:
-                    login(request, user)
-                    return HttpResponse("success")
-
-        return render(request, self.template_name, {'form': form})
-'''
-class UserLoginFormView(View):
-    form_class = UserForm
-    template_name = 'txn/login_form.html'
-
-    # displays a blank form
-    def get(self, request):
-        form = self.form_class(None)
-        return render(request, self.template_name, {'form': form})
-
-    # process form data
-    def post(self, request):
-        form = self.form_class(request.POST)
-        # print("############################")
-        if True:
-            user = form.save(commit=False)
-            print("############################")
-            # cleaned data
-            username = form['username']
-            password = form['password']
-
-            # returns User objects if credentials are correct
-            user = authenticate(username=username, password=password)
-
-            if user is not None:
-                if user.is_active:
-                    login(request, user)
-                    return redirect('index/', args=user.pk)
-
-        return render(request, self.template_name, {'form': form})
-'''
 def optimize(request, group_id):
     Transaction_list = GroupTransaction.objects.filter(gname=group_id)
     if len(Transaction_list) == 0:
