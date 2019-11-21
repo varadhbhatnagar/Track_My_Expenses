@@ -2,16 +2,16 @@ from django.http import Http404, HttpResponse
 from django.shortcuts import render, get_object_or_404, redirect
 from django.contrib.auth import authenticate, login
 from django.views.generic import View
-from .forms import UserForm
-
+from .forms import UserLoginForm, UserSignupForm
 
 
 def home(request):
     return render(request, 'Sl_proj/home.html', {})
 
-class UserFormView(View):
-    form_class = UserForm
-    template_name = 'txn/registration_form.html'
+
+class UserSignupFormView(View):
+    form_class = UserSignupForm
+    template_name = 'registration/registration_form.html'
 
     # displays a blank form
     def get(self, request):
@@ -43,8 +43,8 @@ class UserFormView(View):
 
 
 class UserLoginFormView(View):
-    form_class = UserForm
-    template_name = 'txn/login_form.html'
+    form_class = UserLoginForm
+    template_name = 'registration/login_form.html'
 
     # displays a blank form
     def get(self, request):
