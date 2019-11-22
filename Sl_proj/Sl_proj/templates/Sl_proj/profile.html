@@ -1,0 +1,15 @@
+{% extends "Sl_proj/base.html" %}
+{% block title %}Profile{% endblock %}
+{% block content %}
+<div style="text-align: center">
+    <h3>My Profile</h3>
+    <br>
+    <ul>
+        <li>Username : {{ my_profile.user.username }}</li>
+        <li>First Name : {{ my_profile.First_Name }}</li>
+        <li>Last Name : {{ my_profile.Last_Name }}</li>
+        <li>Mobile Number : {{ my_profile.Mobile_Number }}</li>
+        <li>Annual Income : {{ my_profile.Annual_Income }}</li>
+    </ul>
+</div>
+{% endblock %}

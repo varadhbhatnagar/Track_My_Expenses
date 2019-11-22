@@ -10,10 +10,14 @@ urlpatterns = [
     path('mytransactions/', include('txn.urls')),
     path('register/', views.UserSignupFormView.as_view(), name='register'),
     path('login/', views.UserLoginFormView.as_view(), name='login'),
+    path('logout/', views.user_logout, name='logout'),
+    path('profile/', views.profile, name='profile'),
     path('', views.home, name='home'),
-    #path('', include('txn.urls'))
+    path('analysis/', include('graphs.urls'))
 ]
 
+
+# Handling Bill Images in Development Mode
 if settings.DEBUG:
     urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

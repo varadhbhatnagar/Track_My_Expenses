@@ -1,8 +1,8 @@
-from django.http import Http404, HttpResponse
-from django.shortcuts import render, get_object_or_404, redirect
-from django.contrib.auth import authenticate, login
+from django.shortcuts import render, redirect
+from django.contrib.auth import authenticate, login, logout
 from django.views.generic import View
-from .forms import UserLoginForm, UserSignupForm
+from .forms import UserLoginForm, UserSignupForm, ProfileForm
+from .models import *
 
 
 def home(request):
@@ -10,24 +10,34 @@ def home(request):
 
 
 class UserSignupFormView(View):
-    form_class = UserSignupForm
+    user_form_class = UserSignupForm
+    profile_form_class = ProfileForm
     template_name = 'registration/registration_form.html'
 
     # displays a blank form
     def get(self, request):
-        form = self.form_class(None)
-        return render(request, self.template_name, {'form': form})
+        user_form = self.user_form_class(None)
+        profile_form = self.profile_form_class(None)
+        return render(request, self.template_name, {'user_form': user_form, 'profile_form': profile_form})
 
     # process form data
     def post(self, request):
-        form = self.form_class(request.POST)
+        user_form = self.user_form_class(request.POST)
+        profile_form = self.profile_form_class(request.POST)
 
-        if form.is_valid():
-            user = form.save(commit=False)
+        if user_form.is_valid() and profile_form.is_valid():
+            user = user_form.save()
+            Profile.objects.create(
+                user=user,
+                First_Name=profile_form.cleaned_data['First_Name'],
+                Last_Name=profile_form.cleaned_data['Last_Name'],
+                Mobile_Number=profile_form.cleaned_data['Mobile_Number'],
+                Annual_Income =profile_form.cleaned_data['Annual_Income']
+            )
 
             # cleaned data
-            username = form.cleaned_data['username']
-            password = form.cleaned_data['password']
+            username = user_form.cleaned_data['username']
+            password = user_form.cleaned_data['password']
             user.set_password(password)
             user.save()
 
@@ -37,39 +47,45 @@ class UserSignupFormView(View):
             if user is not None:
                 if user.is_active:
                     login(request, user)
-                    return HttpResponse("success")
+                    return redirect('index')
 
-        return render(request, self.template_name, {'form': form})
+        return render(request, self.template_name, {'user_form': user_form, 'profile_form': profile_form})
 
 
 class UserLoginFormView(View):
-    form_class = UserLoginForm
+    user_form_class = UserLoginForm
     template_name = 'registration/login_form.html'
 
     # displays a blank form
     def get(self, request):
-        form = self.form_class(None)
-        return render(request, self.template_name, {'form': form})
+        user_form = self.user_form_class(None)
+        return render(request, self.template_name, {'user_form': user_form})
 
-    # process form data
+    # process user_form data
     def post(self, request):
-        form = self.form_class(request.POST)
-        # print("############################")
-        if True:
-            user = form.save(commit=False)
-            print("############################")
-            # cleaned data
-            username = form['username']
-            password = form['password']
+        user_form = self.user_form_class(request.POST)
 
-            # returns User objects if credentials are correct
-            user = authenticate(username=username, password=password)
+        username = request.POST['username']
+        password = request.POST['password']
 
-            if user is not None:
-                if user.is_active:
-                    login(request, user)
-                    return redirect('index/', args=user.pk)
+        user = authenticate(username=username, password=password)
 
-        return render(request, self.template_name, {'form': form})
+        if user is not None:
+            if user.is_active:
+                login(request, user)
+                return redirect('index')
+
+        return render(request, self.template_name, {'user_form': user_form})
+
+
+def user_logout(request):
+    logout(request)
+    return redirect('home')
+
+
+def profile(request):
+    my_profile = request.user.profile
+    context = {'my_profile': my_profile}
+    return render(request, 'Sl_proj/profile.html', context)
 
 

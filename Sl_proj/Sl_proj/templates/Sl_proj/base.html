@@ -22,7 +22,7 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="{%  url 'home'%}">Personal Expense Tracker</a>
+      <a class="navbar-brand" href="#">Personal Expense Tracker</a>
     </div>
 
 
@@ -31,21 +31,28 @@
       <div class="collapse navbar-collapse" id="topNavBar">
         <ul class="nav navbar-nav">
             <li class="">
-                <a href="#">
-                   <span class="glyphicon glyphicon-home" aria-hidden="true"></span>&nbsp;
-                    Home
+                <a href="{% url 'profile' %}">
+                   <span class="glyphicon glyphicon-user" aria-hidden="true"></span>&nbsp;
+                    My Profile
                 </a>
             </li>
             <li class="">
-                <a href="#">
+                <a href="{% url 'index' %}">
                    <span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span>&nbsp;
-                    Transaction Management
+                    My Ledger
                 </a>
             </li>
             <li class="">
                 <a href="#">
                    <span class="glyphicon glyphicon-camera" aria-hidden="true"></span>&nbsp;
                     OCR
+                </a>
+            </li>
+
+            <li class="">
+                <a href="{% url 'analysis' %}">
+                   <span class="glyphicon glyphicon-film" aria-hidden="true"></span>&nbsp;
+                    Visualization
                 </a>
             </li>
         </ul>
@@ -65,7 +72,7 @@
                     </a>
               </li>
               <li class="">
-                    <a href="#">
+                    <a href="{% url 'logout' %}">
                        <span class="glyphicon glyphicon-off" aria-hidden="true"></span>&nbsp;
                         Logout
                     </a>

@@ -40,6 +40,8 @@ ALLOWED_HOSTS =['10.129.131.204', '127.0.0.1']
 INSTALLED_APPS = [
     'Sl_proj.apps.Sl_projConfig',
     'txn.apps.TxnConfig',
+    'graphs.apps.GraphsConfig',
+    'split.apps.SplitConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
