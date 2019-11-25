@@ -1,9 +1,31 @@
 {% extends 'Sl_proj/base.html' %}
+{% block styles %} 
+{% endblock %}
+{% block scripts %}
+<link href = "https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.6/cropper.css">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.6/cropper.js">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.6/cropper.min.css">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.6/cropper.min.js">
+<script type="text/javascript">
 
+    $('#id_bill').change(function(e){
+        input = this
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+
+            reader.onload = function (e) {
+                $('#imgbox img').attr('src', e.target.result);
+            }
+            reader.readAsDataURL(input.files[0]);
+        }
+    })
+
+</script>
+{% endblock %}
 {% block content %}
     <div class = "container-fluid">
-        <div class="row">
-            <div class="col-sum-12 col-md-7">
+        <div class="row" >
+            <div class="col-sum-12 col-md-6">
                 <div class="panel panel-default">
                     <div class="panel-body">
                         <h3> Add a new Transaction </h3>
@@ -16,8 +38,13 @@
                                 </div>
                             </div>
                         </form>
-
                     </div>
+                </div>
+            </div>
+            
+            <div class="col-sum-12 col-md-6" id="imgbox">
+                <div style="border: 2px black solid; height: 550px ; width: 550px" id="rightbox">
+                    <img src="/static/img/empty.png" alt="Image Not Available" style="height: 545px; width: 545px;">
                 </div>
             </div>
         </div>

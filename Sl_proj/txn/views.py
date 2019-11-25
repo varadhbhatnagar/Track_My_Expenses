@@ -23,7 +23,7 @@ def detail(request, pk):
 
 class TransactionCreate(CreateView):
     model = Transaction
-    fields = ['details', 'amount', 'category', 'bill']
+    fields = ['bill', 'details', 'amount', 'category']
 
     def form_valid(self, form):
         form.instance.user = self.request.user
