@@ -1,13 +1,20 @@
 class optimize_transaction:
-
+    """
+    Takes a queryset of transaction and return the lis of 
+    minimum transaction required to perform the task
+    """
     def __init__(self, transaction):
+        """Convert transaction queryset to list of transaction"""
         self.transaction_list = []
         for i in range(len(transaction)):
             self.transaction_list.append(
                 [transaction[i].ewo.pk, transaction[i].amount, transaction[i].owe.pk])
 
     def resolve(self):
-
+        """
+        Calculate summary for each user in group makes transaction 
+        such that minimum cash flow is maintained
+        """
         participants_list = set({})
 
         [participants_list.add(participant[0])
