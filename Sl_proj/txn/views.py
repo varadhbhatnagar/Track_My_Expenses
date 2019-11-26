@@ -4,14 +4,17 @@ from django.shortcuts import render, get_object_or_404
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.urls import reverse_lazy
 from django import forms
-from django.http import HttpResponse
+from django.http import HttpResponse, JsonResponse
 
 
 def crop_ocr(request):
     x1 = request.POST.get('x1')
     x2 = request.POST.get('x2')
+    print(request.POST)
+    print(request.FILES)
+    print('===')
     print(x1, x2)
-    return HttpResponse("Success")
+    return JsonResponse({'Success':True})
 
         
 class FileUploadForm(forms.Form):

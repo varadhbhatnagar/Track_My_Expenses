@@ -1,6 +1,6 @@
 from .optimize_transaction import optimize_transaction
 from django.http import Http404, HttpResponse
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, redirect
 from .models import GroupTransaction, Group
 from Sl_proj.models import User
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
@@ -12,6 +12,15 @@ from txn.models import Transaction
 
 def optimize(request, pk):
     """Optimize the summary of groups"""
+    user_list = Group.objects.values('participants').filter(pk=pk)
+    user_id = list(user_list)
+    final = {}
+    for user in user_id:
+        final[list(user.values())[0]] = 1
+    
+    if not request.user.pk in final.keys():
+        raise Http404("You can't view this page")
+
     Transaction_list = GroupTransaction.objects.filter(gname=pk)
     context = {'group_id': pk}
     if len(Transaction_list) == 0:
@@ -88,4 +97,4 @@ class TransCreate(CreateView):
                 pk=payer), amount=req, gname=Group.objects.get(pk=group_id))
             add_trans.save()
 
-        return render(self.request, 'txn/index.html')
+        return redirect('/mygroups/' + str(group_id) + '/optimize')
