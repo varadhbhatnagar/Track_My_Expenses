@@ -43,9 +43,9 @@
                 </a>
             </li>
             <li class="">
-                <a href="#">
-                   <span class="glyphicon glyphicon-camera" aria-hidden="true"></span>&nbsp;
-                    OCR
+                <a href="{% url 'groups' %}">
+                   <span class="glyphicon glyphicon-th-large" aria-hidden="true"></span>&nbsp;
+                    My Groups
                 </a>
             </li>
 
@@ -65,7 +65,13 @@
           </form>
 
           <ul class="nav navbar-nav navbar-right">
-              <li class="">
+            <li class="">
+                <a href="{%  url 'group-add' %}">
+                   <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>&nbsp;
+                    Add Group
+                </a>
+            </li>
+            <li class="">
                     <a href="{%  url 'transaction-add' %}">
                        <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>&nbsp;
                         Add Transaction

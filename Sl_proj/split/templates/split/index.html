@@ -1,0 +1,15 @@
+{% extends "Sl_proj/base.html" %}
+{% block title %}Dashboard{% endblock %}
+{% block content %}
+<div style="text-align: center">
+    <h3>Participant Groups</h3>
+    <br>
+    <table style="width:80%; margin-left: 16%; margin-right:auto;">
+        <tr><th> Group </th> 
+        </tr>
+        {% for group in my_group%}
+            <tr><th><a href="{% url 'optimize' group.pk %}">{{ group.gname }}</a></th></tr>
+        {% endfor %}
+    </table>
+</div>
+{% endblock %}
