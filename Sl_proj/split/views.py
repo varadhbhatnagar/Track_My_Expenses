@@ -11,6 +11,7 @@ from txn.models import Transaction
 
 
 def optimize(request, pk):
+    """Optimize the summary of groups"""
     Transaction_list = GroupTransaction.objects.filter(gname=pk)
     context = {'group_id': pk}
     if len(Transaction_list) == 0:
@@ -30,12 +31,15 @@ def optimize(request, pk):
         gname=pk), 'group_id': pk}
     return render(request, 'split/optimized.html', context)
 
+
 def settle(request, pk):
+    """Settle particular transaction of Group"""
     GroupTransaction.objects.filter(pk=pk).delete()
     return render(request, 'txn/index.html')
 
 
 def groups(request):
+    """It shows the group in which user is enrolled"""
     my_group = Group.objects.filter(participants__pk=request.user.pk)
     context = {'my_group': my_group}
     return render(request, 'split/index.html', context)
@@ -50,11 +54,13 @@ class GroupCreate(CreateView):
 
 
 class GroupDelete(DeleteView):
+    """Used for making Group"""
     model = Group
     success_url = reverse_lazy('groups')
 
 
 class TransCreate(CreateView):
+    """Record Transaction for Group add appropriate Transaction to particpants Ledger and update Group Transaction."""
     model = Transaction
     fields = ['details', 'amount', 'category', 'bill']
 
@@ -83,5 +89,3 @@ class TransCreate(CreateView):
             add_trans.save()
 
         return render(self.request, 'txn/index.html')
-
-

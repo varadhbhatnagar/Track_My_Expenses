@@ -3,11 +3,11 @@ from django.contrib.auth.models import User
 from django.urls import reverse
 
 
-
 class Group(models.Model):
+    """Defines the structure of Group table"""
     gname = models.CharField(max_length=40)
     participants = models.ManyToManyField(User)
-    
+
     def __str__(self):
         return str(self.gname)
 
@@ -16,6 +16,7 @@ class Group(models.Model):
 
 
 class GroupTransaction(models.Model):
+    """Defines the structure of GroupTransaction table"""
     owe = models.ForeignKey(User, on_delete=models.CASCADE, related_name='owe')
     ewo = models.ForeignKey(User, on_delete=models.CASCADE, related_name='ewo')
     amount = models.FloatField()
