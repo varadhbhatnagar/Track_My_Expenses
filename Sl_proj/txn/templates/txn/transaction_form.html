@@ -1,14 +1,13 @@
 {% extends 'Sl_proj/base.html' %}
 {% block styles %} 
+<link href="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.6/cropper.min.css" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.6/cropper.min.js"></script>
 {% endblock %}
 {% block scripts %}
-<link href = "https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.6/cropper.css">
-<link href="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.6/cropper.js">
-<link href="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.6/cropper.min.css">
-<link href="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.6/cropper.min.js">
+
 <script type="text/javascript">
 
-    $('#id_bill').change(function(e){
+    $('#id_bill2').change(function(e){
         input = this
         if (input.files && input.files[0]) {
             var reader = new FileReader();
@@ -19,6 +18,38 @@
             reader.readAsDataURL(input.files[0]);
         }
     })
+
+const image = document.getElementById('image');
+const cropper = new Cropper(image, {
+initialAspectRatio: 4/1,
+crop(event) {
+console.log(event.detail.x);
+console.log(event.detail.y);
+console.log(event.detail.width);
+console.log(event.detail.height);
+console.log(event.detail.rotate);
+console.log(event.detail.scaleX);
+console.log(event.detail.scaleY);
+$('#x1').val(event.detail.x);
+$('#y1').val(event.detail.y);
+$('#x2').val(event.detail.x + event.detail.width);
+$('#y2').val(event.detail.y + event.detail.height);
+},
+});
+
+function uploadFile() {
+$.ajax({
+    data: {"x1" : x1.val(), "x2":x2.val()},
+    type: $(this).attr('method'),
+    url: $(this).attr('action')
+});
+return false;
+}
+
+$(function() {
+     $('#file-upload-form').submit(uploadFile);
+});
+
 
 </script>
 {% endblock %}
@@ -42,11 +73,21 @@
                 </div>
             </div>
             
-            <div class="col-sum-12 col-md-6" id="imgbox">
-                <div style="border: 2px black solid; height: 550px ; width: 550px" id="rightbox">
-                    <img src="/static/img/empty.png" alt="Image Not Available" style="height: 545px; width: 545px;">
+            <form action="/mytransactions/crop-image/" method="post" id="file-upload-form" enctype="multipart/form-data"> 
+                {% csrf_token %}>
+            <div class="col-sum-12 col-md-6" id="imgbox" style="border: 2px black solid; width: 540px;">
+                    OCR MODULE : <input id = "id_bill2" type="file" name="pic" accept="image/*"/>
+                    <button type="submit" class="btn btn-primary" id='upload-btn'>Upload</button>
+                    x1 : <input id ="x1" value = "" size="6"/>
+                    x2 : <input id ="x2" value = "" size="6"/>
+                    y1 : <input id="y1" value = "" size="6"/>
+                    y2 : <input id="y2" value = "" size="6"/>
+                <div style="border: 2px black solid; height: 500px ; width: 500px" id="rightbox">
+                    <img id="image" src="/static/img/empty.png" alt="Image Not Available" style="height: 495px; width: 495px;">
                 </div>
             </div>
+            </form>
+
         </div>
     </div>
 {% endblock %}

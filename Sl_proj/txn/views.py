@@ -3,7 +3,19 @@ from .models import *
 from django.shortcuts import render, get_object_or_404
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.urls import reverse_lazy
+from django import forms
+from django.http import HttpResponse
 
+
+def crop_ocr(request):
+    x1 = request.POST.get('x1')
+    x2 = request.POST.get('x2')
+    print(x1, x2)
+    return HttpResponse("Success")
+
+        
+class FileUploadForm(forms.Form):
+    file_source = forms.FileField()
 
 def index(request):
     my_txn = Transaction.objects.filter(user=request.user.pk)
@@ -54,3 +66,4 @@ class DetailView(generic.DetailView):
     model = Transaction
     template_name = 'txn/detail.html'
 '''
+

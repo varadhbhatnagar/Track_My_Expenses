@@ -7,10 +7,10 @@
         <label class="control-label col-sm-2">{{ field.label_tag }}</label>
         <div class="col-sm-10">{{ field }}
                 {% if field.name == 'details' %}
-                    <button onclick="#">Populate from Image</button>
+                    <button id = "pop-detail" onclick="sendDetail()">Populate from Image</button>
                 {% endif %}
                 {% if field.name == 'amount' %}
-                    <button onclick="#">Populate from Image</button>
+                    <button id = "pop-amount" onclick="sendAmount()">Populate from Image</button>
                 {% endif %}
         </div>
     </div>
