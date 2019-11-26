@@ -1,0 +1,32 @@
+{% extends "Sl_proj/base.html" %}
+{% block title %}Dashboard{% endblock %}
+{% block content %}
+<div style="text-align: center">
+    <h3>Group Summary</h3>
+    <br>
+    <table style="width:80%; margin-left: 16%; margin-right:auto;">
+        <tr>
+            <th> Owe </th>
+            <th> Amount </th>
+            <th>Ewo</th>
+            <!-- <th>Key</th> -->
+        </tr>
+        {% for trans in optimize%}
+        <tr>
+            <th>{{ trans.owe }}</th>
+            <th>{{ trans.amount }}</th>
+            <th>{{ trans.ewo }}</th>
+            <th><button><a href="{% url 'settle' trans.pk %}">Settle</a></button></th>
+        </tr>
+        {% endfor %}
+    </table>
+    <button><a href="{% url 'trans-add' group_id %}">Record</a></button>
+
+    <form action="{% url 'group-delete' group_id %}" method="post">
+        {% csrf_token %}
+        <button type="submit" class="btn btn-danger btn-small">
+            <span class="glyphicon glyphicon-trash"></span>
+        </button>
+    </form>
+</div>
+{% endblock %}

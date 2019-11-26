@@ -13,7 +13,8 @@ urlpatterns = [
     path('logout/', views.user_logout, name='logout'),
     path('profile/', views.profile, name='profile'),
     path('', views.home, name='home'),
-    path('analysis/', include('graphs.urls'))
+    path('analysis/', include('graphs.urls')),
+    path('mygroups/', include('split.urls'),name='groups')
 ]
 
 

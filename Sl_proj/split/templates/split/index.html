@@ -1,0 +1,17 @@
+{% extends "Sl_proj/base.html" %}
+{% block title %}Dashboard{% endblock %}
+{% block content %}
+<div style="text-align: center">
+    <h3>Participant Groups</h3>
+    <br>
+    <div style="width:80%; margin-left: 16%; margin-right:auto;">
+        
+        {% for group in my_group%}
+        {% if forloop.counter0|divisibleby:5 %}
+        <br>
+        {% endif %}
+            <button style="background-color:rgb(0, 204, 255);"><a href="{% url 'optimize' group.pk %}">{{ group.gname }}</a></button>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}
