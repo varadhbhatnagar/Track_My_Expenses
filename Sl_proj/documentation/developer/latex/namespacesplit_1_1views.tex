@@ -1,0 +1,62 @@
+\hypertarget{namespacesplit_1_1views}{}\subsection{split.\+views Namespace Reference}
+\label{namespacesplit_1_1views}\index{split.\+views@{split.\+views}}
+\subsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classsplit_1_1views_1_1GroupCreate}{Group\+Create}
+\begin{DoxyCompactList}\small\item\em creates new entry in Group table \end{DoxyCompactList}\item 
+class \hyperlink{classsplit_1_1views_1_1GroupDelete}{Group\+Delete}
+\begin{DoxyCompactList}\small\item\em removes a Group entry from the table \end{DoxyCompactList}\item 
+class \hyperlink{classsplit_1_1views_1_1TransCreate}{Trans\+Create}
+\begin{DoxyCompactList}\small\item\em adds Transaction detail in a Group as a whole as well in each of the participant ledger. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{namespacesplit_1_1views_af11b16cc5761572469c76c3bcb219bc9}{optimize} (request, pk)
+\begin{DoxyCompactList}\small\item\em Optimizes cash-\/flow in a Group \end{DoxyCompactList}\item 
+def \hyperlink{namespacesplit_1_1views_aabff0365b58e8c915cec74ee02a2ae12}{settle} (request, pk)
+\begin{DoxyCompactList}\small\item\em settles debt \end{DoxyCompactList}\item 
+def \hyperlink{namespacesplit_1_1views_a419d7fc72bf890d32aba4fc21c7568d6}{groups} (request)
+\begin{DoxyCompactList}\small\item\em shows the Group in which User is enrolled \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsubsection{Function Documentation}
+\mbox{\Hypertarget{namespacesplit_1_1views_a419d7fc72bf890d32aba4fc21c7568d6}\label{namespacesplit_1_1views_a419d7fc72bf890d32aba4fc21c7568d6}} 
+\index{split\+::views@{split\+::views}!groups@{groups}}
+\index{groups@{groups}!split\+::views@{split\+::views}}
+\paragraph{\texorpdfstring{groups()}{groups()}}
+{\footnotesize\ttfamily def split.\+views.\+groups (\begin{DoxyParamCaption}\item[{}]{request }\end{DoxyParamCaption})}
+
+
+
+shows the Group in which User is enrolled 
+
+\begin{DoxyReturn}{Returns}
+path to mygroups page 
+\end{DoxyReturn}
+\mbox{\Hypertarget{namespacesplit_1_1views_af11b16cc5761572469c76c3bcb219bc9}\label{namespacesplit_1_1views_af11b16cc5761572469c76c3bcb219bc9}} 
+\index{split\+::views@{split\+::views}!optimize@{optimize}}
+\index{optimize@{optimize}!split\+::views@{split\+::views}}
+\paragraph{\texorpdfstring{optimize()}{optimize()}}
+{\footnotesize\ttfamily def split.\+views.\+optimize (\begin{DoxyParamCaption}\item[{}]{request,  }\item[{}]{pk }\end{DoxyParamCaption})}
+
+
+
+Optimizes cash-\/flow in a Group 
+
+\begin{DoxyReturn}{Returns}
+path to group transaction page along with summary of Group\+Transaction 
+\end{DoxyReturn}
+\mbox{\Hypertarget{namespacesplit_1_1views_aabff0365b58e8c915cec74ee02a2ae12}\label{namespacesplit_1_1views_aabff0365b58e8c915cec74ee02a2ae12}} 
+\index{split\+::views@{split\+::views}!settle@{settle}}
+\index{settle@{settle}!split\+::views@{split\+::views}}
+\paragraph{\texorpdfstring{settle()}{settle()}}
+{\footnotesize\ttfamily def split.\+views.\+settle (\begin{DoxyParamCaption}\item[{}]{request,  }\item[{}]{pk }\end{DoxyParamCaption})}
+
+
+
+settles debt 
+
+\begin{DoxyReturn}{Returns}
+path to Group page 
+\end{DoxyReturn}

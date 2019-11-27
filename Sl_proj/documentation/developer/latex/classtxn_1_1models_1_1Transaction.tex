@@ -1,0 +1,123 @@
+\hypertarget{classtxn_1_1models_1_1Transaction}{}\subsection{txn.\+models.\+Transaction Class Reference}
+\label{classtxn_1_1models_1_1Transaction}\index{txn.\+models.\+Transaction@{txn.\+models.\+Transaction}}
+
+
+Defines the structure of the table used for storing \hyperlink{classtxn_1_1models_1_1Transaction}{Transaction}.  
+
+
+
+
+Inheritance diagram for txn.\+models.\+Transaction\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=199pt]{classtxn_1_1models_1_1Transaction__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for txn.\+models.\+Transaction\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=199pt]{classtxn_1_1models_1_1Transaction__coll__graph}
+\end{center}
+\end{figure}
+\subsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{classtxn_1_1models_1_1Transaction_a82ad28e5fc95fb68579a7864c2a6b64a}{getr\+\_\+absolute\+\_\+url} (self)
+\begin{DoxyCompactList}\small\item\em function which redirects to index page \end{DoxyCompactList}\item 
+def \hyperlink{classtxn_1_1models_1_1Transaction_ac893d08a9197f60a0e2161223e568fbe}{\+\_\+\+\_\+str\+\_\+\+\_\+} (self)
+\begin{DoxyCompactList}\small\item\em function which returns summary for a particular \hyperlink{classtxn_1_1models_1_1Transaction}{Transaction} \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classtxn_1_1models_1_1Transaction_aa926787c0c5b0669e6ade3b05c41efe7}{details} = models.\+Char\+Field(max\+\_\+length=100)
+\item 
+\hyperlink{classtxn_1_1models_1_1Transaction_a2b6b3fb491c248fdffbcb886bb53f83b}{amount} = models.\+Float\+Field()
+\item 
+\hyperlink{classtxn_1_1models_1_1Transaction_a4af461136da5a2da7fd18be27f23ee5e}{category} = models.\+Char\+Field(max\+\_\+length=18, choices=\hyperlink{namespacetxn_1_1models_a034516542ac27ed16242da9c4bc5b636}{C\+A\+T\+E\+G\+O\+R\+Y\+\_\+\+C\+H\+O\+I\+C\+ES})
+\item 
+\hyperlink{classtxn_1_1models_1_1Transaction_a4fd6d61980d17b3630202852c28e153c}{user} = models.\+Foreign\+Key(User, on\+\_\+delete=models.\+P\+R\+O\+T\+E\+CT)
+\item 
+\hyperlink{classtxn_1_1models_1_1Transaction_a6d02b7c7bc3b43dc3306b8e47c21fe1d}{bill} = models.\+File\+Field(blank=True)
+\item 
+\hyperlink{classtxn_1_1models_1_1Transaction_a0b205579b1b94cd4d764a42812ac9acd}{timestamp} = models.\+Date\+Time\+Field(auto\+\_\+now=True)
+\end{DoxyCompactItemize}
+
+
+\subsubsection{Detailed Description}
+Defines the structure of the table used for storing \hyperlink{classtxn_1_1models_1_1Transaction}{Transaction}. 
+
+\subsubsection{Member Function Documentation}
+\mbox{\Hypertarget{classtxn_1_1models_1_1Transaction_ac893d08a9197f60a0e2161223e568fbe}\label{classtxn_1_1models_1_1Transaction_ac893d08a9197f60a0e2161223e568fbe}} 
+\index{txn\+::models\+::\+Transaction@{txn\+::models\+::\+Transaction}!\+\_\+\+\_\+str\+\_\+\+\_\+@{\+\_\+\+\_\+str\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+str\+\_\+\+\_\+@{\+\_\+\+\_\+str\+\_\+\+\_\+}!txn\+::models\+::\+Transaction@{txn\+::models\+::\+Transaction}}
+\paragraph{\texorpdfstring{\+\_\+\+\_\+str\+\_\+\+\_\+()}{\_\_str\_\_()}}
+{\footnotesize\ttfamily def txn.\+models.\+Transaction.\+\_\+\+\_\+str\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+
+
+function which returns summary for a particular \hyperlink{classtxn_1_1models_1_1Transaction}{Transaction} 
+
+\begin{DoxyReturn}{Returns}
+String \hyperlink{classtxn_1_1models_1_1Transaction}{Transaction} details and amount 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classtxn_1_1models_1_1Transaction_a82ad28e5fc95fb68579a7864c2a6b64a}\label{classtxn_1_1models_1_1Transaction_a82ad28e5fc95fb68579a7864c2a6b64a}} 
+\index{txn\+::models\+::\+Transaction@{txn\+::models\+::\+Transaction}!getr\+\_\+absolute\+\_\+url@{getr\+\_\+absolute\+\_\+url}}
+\index{getr\+\_\+absolute\+\_\+url@{getr\+\_\+absolute\+\_\+url}!txn\+::models\+::\+Transaction@{txn\+::models\+::\+Transaction}}
+\paragraph{\texorpdfstring{getr\+\_\+absolute\+\_\+url()}{getr\_absolute\_url()}}
+{\footnotesize\ttfamily def txn.\+models.\+Transaction.\+getr\+\_\+absolute\+\_\+url (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+
+
+function which redirects to index page 
+
+\begin{DoxyReturn}{Returns}
+path to index page 
+\end{DoxyReturn}
+
+
+\subsubsection{Member Data Documentation}
+\mbox{\Hypertarget{classtxn_1_1models_1_1Transaction_a2b6b3fb491c248fdffbcb886bb53f83b}\label{classtxn_1_1models_1_1Transaction_a2b6b3fb491c248fdffbcb886bb53f83b}} 
+\index{txn\+::models\+::\+Transaction@{txn\+::models\+::\+Transaction}!amount@{amount}}
+\index{amount@{amount}!txn\+::models\+::\+Transaction@{txn\+::models\+::\+Transaction}}
+\paragraph{\texorpdfstring{amount}{amount}}
+{\footnotesize\ttfamily txn.\+models.\+Transaction.\+amount = models.\+Float\+Field()\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classtxn_1_1models_1_1Transaction_a6d02b7c7bc3b43dc3306b8e47c21fe1d}\label{classtxn_1_1models_1_1Transaction_a6d02b7c7bc3b43dc3306b8e47c21fe1d}} 
+\index{txn\+::models\+::\+Transaction@{txn\+::models\+::\+Transaction}!bill@{bill}}
+\index{bill@{bill}!txn\+::models\+::\+Transaction@{txn\+::models\+::\+Transaction}}
+\paragraph{\texorpdfstring{bill}{bill}}
+{\footnotesize\ttfamily txn.\+models.\+Transaction.\+bill = models.\+File\+Field(blank=True)\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classtxn_1_1models_1_1Transaction_a4af461136da5a2da7fd18be27f23ee5e}\label{classtxn_1_1models_1_1Transaction_a4af461136da5a2da7fd18be27f23ee5e}} 
+\index{txn\+::models\+::\+Transaction@{txn\+::models\+::\+Transaction}!category@{category}}
+\index{category@{category}!txn\+::models\+::\+Transaction@{txn\+::models\+::\+Transaction}}
+\paragraph{\texorpdfstring{category}{category}}
+{\footnotesize\ttfamily txn.\+models.\+Transaction.\+category = models.\+Char\+Field(max\+\_\+length=18, choices=\hyperlink{namespacetxn_1_1models_a034516542ac27ed16242da9c4bc5b636}{C\+A\+T\+E\+G\+O\+R\+Y\+\_\+\+C\+H\+O\+I\+C\+ES})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classtxn_1_1models_1_1Transaction_aa926787c0c5b0669e6ade3b05c41efe7}\label{classtxn_1_1models_1_1Transaction_aa926787c0c5b0669e6ade3b05c41efe7}} 
+\index{txn\+::models\+::\+Transaction@{txn\+::models\+::\+Transaction}!details@{details}}
+\index{details@{details}!txn\+::models\+::\+Transaction@{txn\+::models\+::\+Transaction}}
+\paragraph{\texorpdfstring{details}{details}}
+{\footnotesize\ttfamily txn.\+models.\+Transaction.\+details = models.\+Char\+Field(max\+\_\+length=100)\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classtxn_1_1models_1_1Transaction_a0b205579b1b94cd4d764a42812ac9acd}\label{classtxn_1_1models_1_1Transaction_a0b205579b1b94cd4d764a42812ac9acd}} 
+\index{txn\+::models\+::\+Transaction@{txn\+::models\+::\+Transaction}!timestamp@{timestamp}}
+\index{timestamp@{timestamp}!txn\+::models\+::\+Transaction@{txn\+::models\+::\+Transaction}}
+\paragraph{\texorpdfstring{timestamp}{timestamp}}
+{\footnotesize\ttfamily txn.\+models.\+Transaction.\+timestamp = models.\+Date\+Time\+Field(auto\+\_\+now=True)\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classtxn_1_1models_1_1Transaction_a4fd6d61980d17b3630202852c28e153c}\label{classtxn_1_1models_1_1Transaction_a4fd6d61980d17b3630202852c28e153c}} 
+\index{txn\+::models\+::\+Transaction@{txn\+::models\+::\+Transaction}!user@{user}}
+\index{user@{user}!txn\+::models\+::\+Transaction@{txn\+::models\+::\+Transaction}}
+\paragraph{\texorpdfstring{user}{user}}
+{\footnotesize\ttfamily txn.\+models.\+Transaction.\+user = models.\+Foreign\+Key(User, on\+\_\+delete=models.\+P\+R\+O\+T\+E\+CT)\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+txn/\hyperlink{txn_2models_8py}{models.\+py}\end{DoxyCompactItemize}

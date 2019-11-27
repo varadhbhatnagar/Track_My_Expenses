@@ -1,0 +1,280 @@
+\begin{theindex}
+
+  \item {\+\_\+\+\_\+str\+\_\+\+\_\+}
+    \subitem {split\+::models\+::\+Group}, \hyperpage{12}
+    \subitem {split\+::models\+::\+Group\+Transaction}, \hyperpage{17}
+    \subitem {txn\+::models\+::\+Transaction}, \hyperpage{21}
+
+  \indexspace
+
+  \item {amount}
+    \subitem {split\+::models\+::\+Group\+Transaction}, \hyperpage{17}
+    \subitem {txn\+::models\+::\+Transaction}, \hyperpage{21}
+  \item {analysis}
+    \subitem {graphs\+::views}, \hyperpage{4}
+  \item {Annual\+\_\+\+Income}
+    \subitem {Sl\+\_\+proj\+::models\+::\+Profile}, \hyperpage{19}
+
+  \indexspace
+
+  \item {bill}
+    \subitem {txn\+::models\+::\+Transaction}, \hyperpage{21}
+
+  \indexspace
+
+  \item {C\+A\+T\+E\+G\+O\+R\+Y\+\_\+\+C\+H\+O\+I\+C\+ES}
+    \subitem {txn\+::models}, \hyperpage{8}
+  \item {category}
+    \subitem {txn\+::models\+::\+Transaction}, \hyperpage{22}
+  \item {crop\+\_\+ocr}
+    \subitem {txn\+::views}, \hyperpage{9}
+
+  \indexspace
+
+  \item {detail}
+    \subitem {txn\+::views}, \hyperpage{9}
+  \item {details}
+    \subitem {txn\+::models\+::\+Transaction}, \hyperpage{22}
+
+  \indexspace
+
+  \item {ewo}
+    \subitem {split\+::models\+::\+Group\+Transaction}, \hyperpage{17}
+
+  \indexspace
+
+  \item {fields}
+    \subitem {split\+::views\+::\+Group\+Create}, \hyperpage{14}
+    \subitem {split\+::views\+::\+Trans\+Create}, \hyperpage{28}
+    \subitem {txn\+::views\+::\+Transaction\+Create}, \hyperpage{23}
+    \subitem {txn\+::views\+::\+Transaction\+Update}, \hyperpage{26}
+  \item {file\+\_\+source}
+    \subitem {txn\+::views\+::\+File\+Upload\+Form}, \hyperpage{11}
+  \item {First\+\_\+\+Name}
+    \subitem {Sl\+\_\+proj\+::models\+::\+Profile}, \hyperpage{19}
+  \item {form\+\_\+valid}
+    \subitem {split\+::views\+::\+Group\+Create}, \hyperpage{14}
+    \subitem {split\+::views\+::\+Trans\+Create}, \hyperpage{28}
+    \subitem {txn\+::views\+::\+Transaction\+Create}, \hyperpage{23}
+
+  \indexspace
+
+  \item {get}
+    \subitem {Sl\+\_\+proj\+::views\+::\+User\+Login\+Form\+View}, 
+		\hyperpage{29}
+    \subitem {Sl\+\_\+proj\+::views\+::\+User\+Signup\+Form\+View}, 
+		\hyperpage{31}
+  \item {get\+\_\+absolute\+\_\+url}
+    \subitem {split\+::models\+::\+Group}, \hyperpage{12}
+  \item {getr\+\_\+absolute\+\_\+url}
+    \subitem {txn\+::models\+::\+Transaction}, \hyperpage{21}
+  \item {gname}
+    \subitem {split\+::models\+::\+Group}, \hyperpage{13}
+    \subitem {split\+::models\+::\+Group\+Transaction}, \hyperpage{17}
+  \item {graphs}, \hyperpage{4}
+  \item {graphs.\+models}, \hyperpage{4}
+  \item {graphs.\+views}, \hyperpage{4}
+  \item {graphs/models.\+py}, \hyperpage{32}
+  \item {graphs/views.\+py}, \hyperpage{33}
+  \item {graphs\+::views}
+    \subitem {analysis}, \hyperpage{4}
+  \item {groups}
+    \subitem {split\+::views}, \hyperpage{7}
+
+  \indexspace
+
+  \item {home}
+    \subitem {Sl\+\_\+proj\+::views}, \hyperpage{6}
+
+  \indexspace
+
+  \item {index}
+    \subitem {txn\+::views}, \hyperpage{10}
+
+  \indexspace
+
+  \item {Last\+\_\+\+Name}
+    \subitem {Sl\+\_\+proj\+::models\+::\+Profile}, \hyperpage{19}
+
+  \indexspace
+
+  \item {Mobile\+\_\+\+Number}
+    \subitem {Sl\+\_\+proj\+::models\+::\+Profile}, \hyperpage{19}
+  \item {model}
+    \subitem {split\+::views\+::\+Group\+Create}, \hyperpage{14}
+    \subitem {split\+::views\+::\+Group\+Delete}, \hyperpage{16}
+    \subitem {split\+::views\+::\+Trans\+Create}, \hyperpage{28}
+    \subitem {txn\+::views\+::\+Transaction\+Create}, \hyperpage{24}
+    \subitem {txn\+::views\+::\+Transaction\+Delete}, \hyperpage{25}
+    \subitem {txn\+::views\+::\+Transaction\+Update}, \hyperpage{26}
+
+  \indexspace
+
+  \item {ocr}, \hyperpage{5}
+    \subitem {ocr\+::views}, \hyperpage{5}
+  \item {ocr.\+models}, \hyperpage{5}
+  \item {ocr.\+views}, \hyperpage{5}
+  \item {ocr/models.\+py}, \hyperpage{32}
+  \item {ocr/views.\+py}, \hyperpage{33}
+  \item {ocr\+::views}
+    \subitem {ocr}, \hyperpage{5}
+  \item {optimize}
+    \subitem {split\+::views}, \hyperpage{7}
+  \item {owe}
+    \subitem {split\+::models\+::\+Group\+Transaction}, \hyperpage{18}
+
+  \indexspace
+
+  \item {participants}
+    \subitem {split\+::models\+::\+Group}, \hyperpage{13}
+  \item {post}
+    \subitem {Sl\+\_\+proj\+::views\+::\+User\+Login\+Form\+View}, 
+		\hyperpage{29}
+    \subitem {Sl\+\_\+proj\+::views\+::\+User\+Signup\+Form\+View}, 
+		\hyperpage{31}
+  \item {profile}
+    \subitem {Sl\+\_\+proj\+::views}, \hyperpage{6}
+  \item {Profile\+\_\+\+Picture}
+    \subitem {Sl\+\_\+proj\+::models\+::\+Profile}, \hyperpage{19}
+  \item {profile\+\_\+form\+\_\+class}
+    \subitem {Sl\+\_\+proj\+::views\+::\+User\+Signup\+Form\+View}, 
+		\hyperpage{31}
+
+  \indexspace
+
+  \item {settle}
+    \subitem {split\+::views}, \hyperpage{8}
+  \item {Sl\+\_\+proj}, \hyperpage{5}
+  \item {Sl\+\_\+proj.\+models}, \hyperpage{5}
+  \item {Sl\+\_\+proj.\+models.\+Profile}, \hyperpage{18}
+  \item {Sl\+\_\+proj.\+views}, \hyperpage{6}
+  \item {Sl\+\_\+proj.\+views.\+User\+Login\+Form\+View}, 
+		\hyperpage{28}
+  \item {Sl\+\_\+proj.\+views.\+User\+Signup\+Form\+View}, 
+		\hyperpage{30}
+  \item {Sl\+\_\+proj/models.\+py}, \hyperpage{32}
+  \item {Sl\+\_\+proj/views.\+py}, \hyperpage{33}
+  \item {Sl\+\_\+proj\+::models\+::\+Profile}
+    \subitem {Annual\+\_\+\+Income}, \hyperpage{19}
+    \subitem {First\+\_\+\+Name}, \hyperpage{19}
+    \subitem {Last\+\_\+\+Name}, \hyperpage{19}
+    \subitem {Mobile\+\_\+\+Number}, \hyperpage{19}
+    \subitem {Profile\+\_\+\+Picture}, \hyperpage{19}
+    \subitem {user}, \hyperpage{19}
+  \item {Sl\+\_\+proj\+::views}
+    \subitem {home}, \hyperpage{6}
+    \subitem {profile}, \hyperpage{6}
+    \subitem {user\+\_\+logout}, \hyperpage{6}
+  \item {Sl\+\_\+proj\+::views\+::\+User\+Login\+Form\+View}
+    \subitem {get}, \hyperpage{29}
+    \subitem {post}, \hyperpage{29}
+    \subitem {template\+\_\+name}, \hyperpage{30}
+    \subitem {user\+\_\+form\+\_\+class}, \hyperpage{30}
+  \item {Sl\+\_\+proj\+::views\+::\+User\+Signup\+Form\+View}
+    \subitem {get}, \hyperpage{31}
+    \subitem {post}, \hyperpage{31}
+    \subitem {profile\+\_\+form\+\_\+class}, \hyperpage{31}
+    \subitem {template\+\_\+name}, \hyperpage{31}
+    \subitem {user\+\_\+form\+\_\+class}, \hyperpage{31}
+  \item {split}, \hyperpage{7}
+  \item {split.\+models}, \hyperpage{7}
+  \item {split.\+models.\+Group}, \hyperpage{11}
+  \item {split.\+models.\+Group\+Transaction}, \hyperpage{16}
+  \item {split.\+views}, \hyperpage{7}
+  \item {split.\+views.\+Group\+Create}, \hyperpage{13}
+  \item {split.\+views.\+Group\+Delete}, \hyperpage{15}
+  \item {split.\+views.\+Trans\+Create}, \hyperpage{27}
+  \item {split/models.\+py}, \hyperpage{32}
+  \item {split/views.\+py}, \hyperpage{34}
+  \item {split\+::models\+::\+Group}
+    \subitem {\+\_\+\+\_\+str\+\_\+\+\_\+}, \hyperpage{12}
+    \subitem {get\+\_\+absolute\+\_\+url}, \hyperpage{12}
+    \subitem {gname}, \hyperpage{13}
+    \subitem {participants}, \hyperpage{13}
+  \item {split\+::models\+::\+Group\+Transaction}
+    \subitem {\+\_\+\+\_\+str\+\_\+\+\_\+}, \hyperpage{17}
+    \subitem {amount}, \hyperpage{17}
+    \subitem {ewo}, \hyperpage{17}
+    \subitem {gname}, \hyperpage{17}
+    \subitem {owe}, \hyperpage{18}
+  \item {split\+::views}
+    \subitem {groups}, \hyperpage{7}
+    \subitem {optimize}, \hyperpage{7}
+    \subitem {settle}, \hyperpage{8}
+  \item {split\+::views\+::\+Group\+Create}
+    \subitem {fields}, \hyperpage{14}
+    \subitem {form\+\_\+valid}, \hyperpage{14}
+    \subitem {model}, \hyperpage{14}
+  \item {split\+::views\+::\+Group\+Delete}
+    \subitem {model}, \hyperpage{16}
+    \subitem {success\+\_\+url}, \hyperpage{16}
+  \item {split\+::views\+::\+Trans\+Create}
+    \subitem {fields}, \hyperpage{28}
+    \subitem {form\+\_\+valid}, \hyperpage{28}
+    \subitem {model}, \hyperpage{28}
+  \item {success\+\_\+url}
+    \subitem {split\+::views\+::\+Group\+Delete}, \hyperpage{16}
+    \subitem {txn\+::views\+::\+Transaction\+Delete}, \hyperpage{25}
+
+  \indexspace
+
+  \item {template\+\_\+name}
+    \subitem {Sl\+\_\+proj\+::views\+::\+User\+Login\+Form\+View}, 
+		\hyperpage{30}
+    \subitem {Sl\+\_\+proj\+::views\+::\+User\+Signup\+Form\+View}, 
+		\hyperpage{31}
+  \item {timestamp}
+    \subitem {txn\+::models\+::\+Transaction}, \hyperpage{22}
+  \item {txn}, \hyperpage{8}
+  \item {txn.\+models}, \hyperpage{8}
+  \item {txn.\+models.\+Transaction}, \hyperpage{20}
+  \item {txn.\+views}, \hyperpage{9}
+  \item {txn.\+views.\+File\+Upload\+Form}, \hyperpage{10}
+  \item {txn.\+views.\+Transaction\+Create}, \hyperpage{22}
+  \item {txn.\+views.\+Transaction\+Delete}, \hyperpage{24}
+  \item {txn.\+views.\+Transaction\+Update}, \hyperpage{25}
+  \item {txn/models.\+py}, \hyperpage{33}
+  \item {txn/views.\+py}, \hyperpage{34}
+  \item {txn\+::models}
+    \subitem {C\+A\+T\+E\+G\+O\+R\+Y\+\_\+\+C\+H\+O\+I\+C\+ES}, 
+		\hyperpage{8}
+  \item {txn\+::models\+::\+Transaction}
+    \subitem {\+\_\+\+\_\+str\+\_\+\+\_\+}, \hyperpage{21}
+    \subitem {amount}, \hyperpage{21}
+    \subitem {bill}, \hyperpage{21}
+    \subitem {category}, \hyperpage{22}
+    \subitem {details}, \hyperpage{22}
+    \subitem {getr\+\_\+absolute\+\_\+url}, \hyperpage{21}
+    \subitem {timestamp}, \hyperpage{22}
+    \subitem {user}, \hyperpage{22}
+  \item {txn\+::views}
+    \subitem {crop\+\_\+ocr}, \hyperpage{9}
+    \subitem {detail}, \hyperpage{9}
+    \subitem {index}, \hyperpage{10}
+  \item {txn\+::views\+::\+File\+Upload\+Form}
+    \subitem {file\+\_\+source}, \hyperpage{11}
+  \item {txn\+::views\+::\+Transaction\+Create}
+    \subitem {fields}, \hyperpage{23}
+    \subitem {form\+\_\+valid}, \hyperpage{23}
+    \subitem {model}, \hyperpage{24}
+  \item {txn\+::views\+::\+Transaction\+Delete}
+    \subitem {model}, \hyperpage{25}
+    \subitem {success\+\_\+url}, \hyperpage{25}
+  \item {txn\+::views\+::\+Transaction\+Update}
+    \subitem {fields}, \hyperpage{26}
+    \subitem {model}, \hyperpage{26}
+
+  \indexspace
+
+  \item {user}
+    \subitem {Sl\+\_\+proj\+::models\+::\+Profile}, \hyperpage{19}
+    \subitem {txn\+::models\+::\+Transaction}, \hyperpage{22}
+  \item {user\+\_\+form\+\_\+class}
+    \subitem {Sl\+\_\+proj\+::views\+::\+User\+Login\+Form\+View}, 
+		\hyperpage{30}
+    \subitem {Sl\+\_\+proj\+::views\+::\+User\+Signup\+Form\+View}, 
+		\hyperpage{31}
+  \item {user\+\_\+logout}
+    \subitem {Sl\+\_\+proj\+::views}, \hyperpage{6}
+
+\end{theindex}
