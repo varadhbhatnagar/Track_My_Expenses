@@ -5,6 +5,9 @@ from django.dispatch import receiver
 
 
 class Profile(models.Model):
+    """!
+    @detailed Defines the structure of the table used for storing User Profile
+    """
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     First_Name = models.CharField(max_length=30)
     Last_Name = models.CharField(max_length=30)
