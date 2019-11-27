@@ -11,7 +11,10 @@ from txn.models import Transaction
 
 
 def optimize(request, pk):
-    """Optimize the summary of groups"""
+    """!
+    @detailed Optimizes cash-flow in a Group
+    @return path to group transaction page along with summary of GroupTransaction
+    """
     user_list = Group.objects.values('participants').filter(pk=pk)
     user_id = list(user_list)
     final = {}
@@ -42,19 +45,28 @@ def optimize(request, pk):
 
 
 def settle(request, pk):
-    """Settle particular transaction of Group"""
+    """!
+    @detailed settles debt
+    @return path to Group page
+    """
     GroupTransaction.objects.filter(pk=pk).delete()
-    return render(request, 'txn/index.html')
+    return redirect('/mygroups/')
 
 
 def groups(request):
-    """It shows the group in which user is enrolled"""
+    """!
+    @detailed shows the Group in which User is enrolled
+    @return path to mygroups page
+    """
     my_group = Group.objects.filter(participants__pk=request.user.pk)
     context = {'my_group': my_group}
-    return render(request, 'split/index.html', context)
+    return render(request, 'split/mygroups.html', context)
 
 
 class GroupCreate(CreateView):
+    """!
+    @detailed creates new entry in Group table
+    """
     model = Group
     fields = ['gname', 'participants']
 
@@ -63,13 +75,17 @@ class GroupCreate(CreateView):
 
 
 class GroupDelete(DeleteView):
-    """Used for making Group"""
+    """!
+    @detailed removes a Group entry from the table
+    """
     model = Group
     success_url = reverse_lazy('groups')
 
 
 class TransCreate(CreateView):
-    """Record Transaction for Group add appropriate Transaction to particpants Ledger and update Group Transaction."""
+    """!
+    @detailed adds Transaction detail in a Group as a whole as well in each of the participant ledger.  
+    """
     model = Transaction
     fields = ['details', 'amount', 'category', 'bill']
 

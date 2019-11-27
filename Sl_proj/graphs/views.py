@@ -6,9 +6,11 @@ from txn.models import Transaction
 # Create your views here.
 
 def analysis(request):
-    """
-    extract the information of logged in user and calculate its 
+    """!
+    @brief graphical visualization
+    @detailed Extract the information of logged in user and calculate its 
     expenditure in each domain
+    @return path to analysis page along with expenditure for each category
     """
     data = Transaction.objects.filter(user=request.user.pk).values('category').annotate(Sum('amount'))
     dict1 = {}

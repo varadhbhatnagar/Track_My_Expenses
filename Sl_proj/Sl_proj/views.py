@@ -6,21 +6,25 @@ from .models import *
 
 
 def home(request):
+    """!
+    @brief Landing page
+    """
     return render(request, 'Sl_proj/home.html', {})
 
 
 class UserSignupFormView(View):
+    """!
+    @detailed SignUp for User
+    """
     user_form_class = UserSignupForm
     profile_form_class = ProfileForm
     template_name = 'registration/registration_form.html'
 
-    # displays a blank form
     def get(self, request):
         user_form = self.user_form_class(None)
         profile_form = self.profile_form_class(None)
         return render(request, self.template_name, {'user_form': user_form, 'profile_form': profile_form})
 
-    # process form data
     def post(self, request):
         user_form = self.user_form_class(request.POST)
         profile_form = self.profile_form_class(request.POST)
@@ -35,13 +39,11 @@ class UserSignupFormView(View):
                 Annual_Income =profile_form.cleaned_data['Annual_Income']
             )
 
-            # cleaned data
             username = user_form.cleaned_data['username']
             password = user_form.cleaned_data['password']
             user.set_password(password)
             user.save()
 
-            # returns User objects if credentials are correct
             user = authenticate(username=username, password=password)
 
             if user is not None:
@@ -53,15 +55,16 @@ class UserSignupFormView(View):
 
 
 class UserLoginFormView(View):
+    """!
+    @detailed Login for User
+    """
     user_form_class = UserLoginForm
     template_name = 'registration/login_form.html'
 
-    # displays a blank form
     def get(self, request):
         user_form = self.user_form_class(None)
         return render(request, self.template_name, {'user_form': user_form})
 
-    # process user_form data
     def post(self, request):
         user_form = self.user_form_class(request.POST)
 
@@ -79,11 +82,19 @@ class UserLoginFormView(View):
 
 
 def user_logout(request):
+    """!
+    @detailed end the sessions for a User
+    @return path to home page
+    """
     logout(request)
     return redirect('home')
 
 
 def profile(request):
+    """!
+    @detailed User profile description
+    @return path to profile page along with profile information
+    """
     my_profile = request.user.profile
     context = {'my_profile': my_profile}
     return render(request, 'Sl_proj/profile.html', context)
