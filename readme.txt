@@ -28,4 +28,27 @@ After installing all dependencies mentioned in the documentation:
 6. You can also view your spending in various domains by looking at the visualization in navbar.
 7. You can log out when your work is complete.
 
+References:
+
+https://simpleisbetterthancomplex.com/tutorial/2016/11/22/django-multiple-file-upload-using-ajax.html
+
+https://stackoverflow.com/questions/31866920/django-ajax-upload-image
+
+Home Page image:
+https://www.amazon.com/Personal-Expense-Tracker-Organizer-Notebook/dp/109607656X
+
+Theme URL: https://bootstrapmade.com/rapid-multipurpose-bootstrap-business-template/
+Author: BootstrapMade.com
+License: https://bootstrapmade.com/license/
+
+https://docs.djangoproject.com/en/2.2/
+
+https://plot.ly/javascript/reference/
+
+https://github.com/fengyuanchen/cropperjs/blob/master/README.md
+
+https://github.com/tesseract-ocr/tesseracts
+
+https://pillow.readthedocs.io/en/stable/
+
         
