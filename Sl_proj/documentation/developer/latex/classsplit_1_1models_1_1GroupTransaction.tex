@@ -1,0 +1,92 @@
+\hypertarget{classsplit_1_1models_1_1GroupTransaction}{}\subsection{split.\+models.\+Group\+Transaction Class Reference}
+\label{classsplit_1_1models_1_1GroupTransaction}\index{split.\+models.\+Group\+Transaction@{split.\+models.\+Group\+Transaction}}
+
+
+Defines the structure of the table used for storing \hyperlink{classsplit_1_1models_1_1GroupTransaction}{Group\+Transaction}.  
+
+
+
+
+Inheritance diagram for split.\+models.\+Group\+Transaction\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=229pt]{classsplit_1_1models_1_1GroupTransaction__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for split.\+models.\+Group\+Transaction\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=229pt]{classsplit_1_1models_1_1GroupTransaction__coll__graph}
+\end{center}
+\end{figure}
+\subsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{classsplit_1_1models_1_1GroupTransaction_ab2fdfa9cdc899dbb3296e06e16e217fd}{\+\_\+\+\_\+str\+\_\+\+\_\+} (self)
+\begin{DoxyCompactList}\small\item\em function which returns summary for a transaction in a \hyperlink{classsplit_1_1models_1_1Group}{Group} \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classsplit_1_1models_1_1GroupTransaction_a0bbc00c7501cab8540c3af179b07ea08}{owe} = models.\+Foreign\+Key(User, on\+\_\+delete=models.\+C\+A\+S\+C\+A\+DE, related\+\_\+name=\textquotesingle{}owe\textquotesingle{})
+\item 
+\hyperlink{classsplit_1_1models_1_1GroupTransaction_a1abbf884cef0569c755f0400289227d4}{ewo} = models.\+Foreign\+Key(User, on\+\_\+delete=models.\+C\+A\+S\+C\+A\+DE, related\+\_\+name=\textquotesingle{}ewo\textquotesingle{})
+\item 
+\hyperlink{classsplit_1_1models_1_1GroupTransaction_a7e632cc1455b034cce3b25549b970ed5}{amount} = models.\+Float\+Field()
+\item 
+\hyperlink{classsplit_1_1models_1_1GroupTransaction_a409102962bbb485e924d07f922271409}{gname} = models.\+Foreign\+Key(\hyperlink{classsplit_1_1models_1_1Group}{Group}, on\+\_\+delete=models.\+C\+A\+S\+C\+A\+DE)
+\end{DoxyCompactItemize}
+
+
+\subsubsection{Detailed Description}
+Defines the structure of the table used for storing \hyperlink{classsplit_1_1models_1_1GroupTransaction}{Group\+Transaction}. 
+
+\subsubsection{Member Function Documentation}
+\mbox{\Hypertarget{classsplit_1_1models_1_1GroupTransaction_ab2fdfa9cdc899dbb3296e06e16e217fd}\label{classsplit_1_1models_1_1GroupTransaction_ab2fdfa9cdc899dbb3296e06e16e217fd}} 
+\index{split\+::models\+::\+Group\+Transaction@{split\+::models\+::\+Group\+Transaction}!\+\_\+\+\_\+str\+\_\+\+\_\+@{\+\_\+\+\_\+str\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+str\+\_\+\+\_\+@{\+\_\+\+\_\+str\+\_\+\+\_\+}!split\+::models\+::\+Group\+Transaction@{split\+::models\+::\+Group\+Transaction}}
+\paragraph{\texorpdfstring{\+\_\+\+\_\+str\+\_\+\+\_\+()}{\_\_str\_\_()}}
+{\footnotesize\ttfamily def split.\+models.\+Group\+Transaction.\+\_\+\+\_\+str\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+
+
+function which returns summary for a transaction in a \hyperlink{classsplit_1_1models_1_1Group}{Group} 
+
+\begin{DoxyReturn}{Returns}
+String Borrower-\/\+Amount-\/\+Lender-\/\+Group Name 
+\end{DoxyReturn}
+
+
+\subsubsection{Member Data Documentation}
+\mbox{\Hypertarget{classsplit_1_1models_1_1GroupTransaction_a7e632cc1455b034cce3b25549b970ed5}\label{classsplit_1_1models_1_1GroupTransaction_a7e632cc1455b034cce3b25549b970ed5}} 
+\index{split\+::models\+::\+Group\+Transaction@{split\+::models\+::\+Group\+Transaction}!amount@{amount}}
+\index{amount@{amount}!split\+::models\+::\+Group\+Transaction@{split\+::models\+::\+Group\+Transaction}}
+\paragraph{\texorpdfstring{amount}{amount}}
+{\footnotesize\ttfamily split.\+models.\+Group\+Transaction.\+amount = models.\+Float\+Field()\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classsplit_1_1models_1_1GroupTransaction_a1abbf884cef0569c755f0400289227d4}\label{classsplit_1_1models_1_1GroupTransaction_a1abbf884cef0569c755f0400289227d4}} 
+\index{split\+::models\+::\+Group\+Transaction@{split\+::models\+::\+Group\+Transaction}!ewo@{ewo}}
+\index{ewo@{ewo}!split\+::models\+::\+Group\+Transaction@{split\+::models\+::\+Group\+Transaction}}
+\paragraph{\texorpdfstring{ewo}{ewo}}
+{\footnotesize\ttfamily split.\+models.\+Group\+Transaction.\+ewo = models.\+Foreign\+Key(User, on\+\_\+delete=models.\+C\+A\+S\+C\+A\+DE, related\+\_\+name=\textquotesingle{}ewo\textquotesingle{})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classsplit_1_1models_1_1GroupTransaction_a409102962bbb485e924d07f922271409}\label{classsplit_1_1models_1_1GroupTransaction_a409102962bbb485e924d07f922271409}} 
+\index{split\+::models\+::\+Group\+Transaction@{split\+::models\+::\+Group\+Transaction}!gname@{gname}}
+\index{gname@{gname}!split\+::models\+::\+Group\+Transaction@{split\+::models\+::\+Group\+Transaction}}
+\paragraph{\texorpdfstring{gname}{gname}}
+{\footnotesize\ttfamily split.\+models.\+Group\+Transaction.\+gname = models.\+Foreign\+Key(\hyperlink{classsplit_1_1models_1_1Group}{Group}, on\+\_\+delete=models.\+C\+A\+S\+C\+A\+DE)\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classsplit_1_1models_1_1GroupTransaction_a0bbc00c7501cab8540c3af179b07ea08}\label{classsplit_1_1models_1_1GroupTransaction_a0bbc00c7501cab8540c3af179b07ea08}} 
+\index{split\+::models\+::\+Group\+Transaction@{split\+::models\+::\+Group\+Transaction}!owe@{owe}}
+\index{owe@{owe}!split\+::models\+::\+Group\+Transaction@{split\+::models\+::\+Group\+Transaction}}
+\paragraph{\texorpdfstring{owe}{owe}}
+{\footnotesize\ttfamily split.\+models.\+Group\+Transaction.\+owe = models.\+Foreign\+Key(User, on\+\_\+delete=models.\+C\+A\+S\+C\+A\+DE, related\+\_\+name=\textquotesingle{}owe\textquotesingle{})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+split/\hyperlink{split_2models_8py}{models.\+py}\end{DoxyCompactItemize}

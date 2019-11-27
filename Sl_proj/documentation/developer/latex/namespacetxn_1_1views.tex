@@ -1,0 +1,64 @@
+\hypertarget{namespacetxn_1_1views}{}\subsection{txn.\+views Namespace Reference}
+\label{namespacetxn_1_1views}\index{txn.\+views@{txn.\+views}}
+\subsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classtxn_1_1views_1_1FileUploadForm}{File\+Upload\+Form}
+\item 
+class \hyperlink{classtxn_1_1views_1_1TransactionCreate}{Transaction\+Create}
+\begin{DoxyCompactList}\small\item\em creates new entry in transaction table \end{DoxyCompactList}\item 
+class \hyperlink{classtxn_1_1views_1_1TransactionDelete}{Transaction\+Delete}
+\begin{DoxyCompactList}\small\item\em removes a transaction entry from the table \end{DoxyCompactList}\item 
+class \hyperlink{classtxn_1_1views_1_1TransactionUpdate}{Transaction\+Update}
+\begin{DoxyCompactList}\small\item\em updates pre-\/existing transaction \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{namespacetxn_1_1views_ac1096b81d00047d1a39d206aae68158c}{crop\+\_\+ocr} (request)
+\begin{DoxyCompactList}\small\item\em handles A\+J\+AX request and applies O\+CR on image \end{DoxyCompactList}\item 
+def \hyperlink{namespacetxn_1_1views_a61ce77e1acb7dff6d535eb5df692cc15}{index} (request)
+\begin{DoxyCompactList}\small\item\em extracts transaction information of logged in user \end{DoxyCompactList}\item 
+def \hyperlink{namespacetxn_1_1views_a8a0b2c1194c685d03b855198044c1340}{detail} (request, pk)
+\begin{DoxyCompactList}\small\item\em information about particular transaction \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsubsection{Function Documentation}
+\mbox{\Hypertarget{namespacetxn_1_1views_ac1096b81d00047d1a39d206aae68158c}\label{namespacetxn_1_1views_ac1096b81d00047d1a39d206aae68158c}} 
+\index{txn\+::views@{txn\+::views}!crop\+\_\+ocr@{crop\+\_\+ocr}}
+\index{crop\+\_\+ocr@{crop\+\_\+ocr}!txn\+::views@{txn\+::views}}
+\paragraph{\texorpdfstring{crop\+\_\+ocr()}{crop\_ocr()}}
+{\footnotesize\ttfamily def txn.\+views.\+crop\+\_\+ocr (\begin{DoxyParamCaption}\item[{}]{request }\end{DoxyParamCaption})}
+
+
+
+handles A\+J\+AX request and applies O\+CR on image 
+
+\begin{DoxyReturn}{Returns}
+String amount-\/detail of the receipts 
+\end{DoxyReturn}
+\mbox{\Hypertarget{namespacetxn_1_1views_a8a0b2c1194c685d03b855198044c1340}\label{namespacetxn_1_1views_a8a0b2c1194c685d03b855198044c1340}} 
+\index{txn\+::views@{txn\+::views}!detail@{detail}}
+\index{detail@{detail}!txn\+::views@{txn\+::views}}
+\paragraph{\texorpdfstring{detail()}{detail()}}
+{\footnotesize\ttfamily def txn.\+views.\+detail (\begin{DoxyParamCaption}\item[{}]{request,  }\item[{}]{pk }\end{DoxyParamCaption})}
+
+
+
+information about particular transaction 
+
+\begin{DoxyReturn}{Returns}
+complete transaction detail or Error page 
+\end{DoxyReturn}
+\mbox{\Hypertarget{namespacetxn_1_1views_a61ce77e1acb7dff6d535eb5df692cc15}\label{namespacetxn_1_1views_a61ce77e1acb7dff6d535eb5df692cc15}} 
+\index{txn\+::views@{txn\+::views}!index@{index}}
+\index{index@{index}!txn\+::views@{txn\+::views}}
+\paragraph{\texorpdfstring{index()}{index()}}
+{\footnotesize\ttfamily def txn.\+views.\+index (\begin{DoxyParamCaption}\item[{}]{request }\end{DoxyParamCaption})}
+
+
+
+extracts transaction information of logged in user 
+
+\begin{DoxyReturn}{Returns}
+path to ledger page along with user transaction details 
+\end{DoxyReturn}
