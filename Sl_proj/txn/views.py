@@ -5,16 +5,22 @@ from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.urls import reverse_lazy
 from django import forms
 from django.http import HttpResponse, JsonResponse
-
+from PIL import Image
+from . import tesseract
 
 def crop_ocr(request):
     x1 = request.POST.get('x1')
     x2 = request.POST.get('x2')
-    print(request.POST)
-    print(request.FILES)
-    print('===')
-    print(x1, x2)
-    return JsonResponse({'Success':True})
+    y1 = request.POST.get('y1')
+    y2 = request.POST.get('y2')
+    pic = request.FILES.get('pic')
+    print(x1, x2 , y1, y2)
+    
+    img = Image.open(pic)
+    img.save('abcd.jpg')
+    text = tesseract.ocr(x1,x2,y1,y2)
+    print(text)
+    return JsonResponse({'Success': text})
 
         
 class FileUploadForm(forms.Form):

@@ -1,7 +1,7 @@
 {% extends 'Sl_proj/base.html' %}
 {% block styles %}
 <link href="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.6/cropper.min.css" rel="stylesheet">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.6/cropper.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.6/cropper.min.js"></script> 
 {% endblock %}
 {% block scripts %}
 
@@ -47,9 +47,11 @@
         let formData = new FormData();
         formData.append("x1", $('#x1').val())
         formData.append("x2", $('#x2').val())
-        formData.append("pic", $('input[type=file]')[0].files)
-        alert("hello")
-        console.log($('input[type=file]')[0].files)
+        formData.append("y1", $('#y1').val())
+        formData.append("y2", $('#y2').val())
+        formData.append("pic", $('#id_bill2')[0].files[0])
+        //alert("hello")
+        console.log($('#id_bill2')[0].files[0])
         $.ajax({
             data: formData,//{ "x1": x1.val(), "x2": x2.val(), "pic": $('#id_bill2').val()},
             type: "POST",
@@ -63,7 +65,8 @@
                 // if (data.is_taken) {
                 //     alert("A user with this username already exists.");
                 // }
-                alert(data.Success)
+                //alert(data.Success)
+                $('#id_details').val(data.Success)
             }
         });
         // return false;
@@ -95,7 +98,7 @@
                 </div>
             </div>
         </div>
-
+        
         <form action="/mytransactions/crop-image/" method="post" id="file-upload-form" enctype="multipart/form-data">
             {% csrf_token %}
             <div class="col-sum-12 col-md-6" id="imgbox" style="border: 2px black solid; width: 540px;">
